@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odili Emmanuel — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #0d0d0d;
+      --bg2:    #141414;
+      --card:   #1a1a1a;
+      --border: #2a2a2a;
+      --white:  #f0f0f0;
+      --muted:  #888;
+      --dim:    #555;
+      --accent: #e63b3b;
+      --f: 'Inter', sans-serif;
+      --m: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: var(--f); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 6%;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--m); font-size: 0.9rem; color: var(--white); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-hire { color: var(--white) !important; background: var(--accent); padding: 0.45rem 1.1rem; border-radius: 4px; font-weight: 500; transition: opacity 0.2s !important; }
+    .nav-hire:hover { opacity: 0.85 !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 0 6%; padding-top: 5rem;
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-tag { font-family: var(--m); font-size: 0.82rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 1.75rem; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem; color: var(--white); }
+    h1 span { color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8; font-weight: 300; }
+    .hero-sub strong { color: var(--white); font-weight: 500; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-solid { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.6rem; background: var(--accent); color: #fff; font-size: 0.875rem; font-weight: 500; text-decoration: none; border-radius: 4px; transition: opacity 0.2s, transform 0.15s; }
+    .btn-solid:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.6rem; background: transparent; color: var(--white); font-size: 0.875rem; font-weight: 400; text-decoration: none; border-radius: 4px; border: 1px solid var(--border); transition: border-color 0.2s, transform 0.15s; }
+    .btn-ghost:hover { border-color: var(--dim); transform: translateY(-1px); }
+
+    /* ── DIVIDER ── */
+    .section-line { width: 100%; height: 1px; background: var(--border); }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 6%; }
+    .section-header { margin-bottom: 3rem; }
+    .section-label { font-family: var(--m); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; letter-spacing: -0.02em; color: var(--white); }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .sk-card { background: var(--card); padding: 1.75rem; transition: background 0.2s; }
+    .sk-card:hover { background: #202020; }
+    .sk-name { font-size: 0.8rem; font-weight: 600; color: var(--white); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { font-family: var(--m); font-size: 0.7rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); padding: 0.2rem 0.55rem; border-radius: 3px; white-space: nowrap; }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg); }
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; }
+    .proj-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; transition: border-color 0.2s, transform 0.2s; }
+    .proj-card:hover { border-color: #3a3a3a; transform: translateY(-3px); }
+    .proj-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+    .proj-name { font-size: 0.95rem; font-weight: 600; color: var(--white); }
+    .proj-gh { display: flex; align-items: center; justify-content: center; width: 1.8rem; height: 1.8rem; color: var(--dim); text-decoration: none; transition: color 0.2s; flex-shrink: 0; }
+    .proj-gh:hover { color: var(--white); }
+    .proj-desc { font-size: 0.855rem; color: var(--muted); line-height: 1.75; flex: 1; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .proj-tag { font-family: var(--m); font-size: 0.68rem; color: var(--accent); background: rgba(230,59,59,0.08); border: 1px solid rgba(230,59,59,0.2); padding: 0.18rem 0.5rem; border-radius: 3px; white-space: nowrap; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 1.1rem; line-height: 1.85; font-size: 0.95rem; font-weight: 300; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--white); font-weight: 500; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .stat { background: var(--card); padding: 1.5rem; }
+    .stat-n { font-size: 2rem; font-weight: 600; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; letter-spacing: -0.02em; }
+    .stat-l { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .contact-text p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; font-weight: 300; margin-bottom: 2rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-link { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card); }
+    .contact-link:hover { color: var(--white); border-color: #3a3a3a; }
+    .contact-link svg { flex-shrink: 0; color: var(--dim); }
+    .contact-link:hover svg { color: var(--accent); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-field label { font-size: 0.78rem; color: var(--muted); font-weight: 500; letter-spacing: 0.04em; }
+    .form-field input, .form-field textarea { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0.7rem 0.9rem; color: var(--white); font-family: var(--f); font-size: 0.875rem; outline: none; transition: border-color 0.2s; resize: none; }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--accent); }
+    .form-field textarea { height: 110px; }
+
+    /* ── FOOTER ── */
+    footer { padding: 2rem 6%; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: var(--bg); }
+    .f-left { font-family: var(--m); font-size: 0.75rem; color: var(--dim); }
+    .f-right { display: flex; gap: 1.5rem; }
+    .f-link { font-size: 0.8rem; color: var(--dim); text-decoration: none; transition: color 0.2s; }
+    .f-link:hover { color: var(--white); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#hero" class="nav-logo">odili<span>.</span>dev</a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <p class="hero-tag">Software Engineer &mdash; Lagos, Nigeria</p>
+      <h1>Building reliable<br/>systems <span>at scale.</span></h1>
+      <p class="hero-sub">
+        Hi, I'm <strong>Odili Emmanuel</strong> &mdash; a full-stack and backend engineer
+        specialising in microservices, event-driven architecture, and distributed systems.
+        Currently training at <strong>Semicolon Africa</strong>.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-solid">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View Projects
+        </a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-line"></div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <p class="section-label">Expertise</p>
+      <h2>Tech Stack</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="sk-card reveal">
+        <p class="sk-name">Backend</p>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">Spring Boot</span>
+          <span class="tag">Go</span><span class="tag">Gin</span>
+          <span class="tag">Python</span><span class="tag">FastAPI</span>
+          <span class="tag">Flask</span><span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <p class="sk-name">Frontend</p>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span>
+          <span class="tag">Next.js</span><span class="tag">Tailwind CSS</span>
+          <span class="tag">Vite</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <p class="sk-name">Databases</p>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span><span class="tag">GORM</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <p class="sk-name">Messaging &amp; Real-Time</p>
+        <div class="tags">
+          <span class="tag">Apache Kafka</span><span class="tag">RabbitMQ</span>
+          <span class="tag">STOMP</span><span class="tag">WebSockets</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <p class="sk-name">DevOps &amp; Tooling</p>
+        <div class="tags">
+          <span class="tag">Docker</span><span class="tag">Docker Compose</span>
+          <span class="tag">GitHub Actions</span><span class="tag">Linux</span>
+          <span class="tag">Maven</span><span class="tag">Postman</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
+        <p class="sk-name">Architecture</p>
+        <div class="tags">
+          <span class="tag">Microservices</span><span class="tag">Event-Driven</span>
+          <span class="tag">API Gateway</span><span class="tag">JWT Auth</span>
+          <span class="tag">Spring Cloud</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-line"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <p class="section-label">Work</p>
+      <h2>Projects</h2>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">EduPath Nigeria</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">AI-powered personalised learning platform for Nigerian students. Full-stack capstone at Semicolon Africa &mdash; Go (Gin) REST backend, React/TypeScript frontend. Designed using the full Design Thinking process from user research to prototype.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Go</span><span class="proj-tag">Gin</span>
+          <span class="proj-tag">React</span><span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">Real-Time Chat App</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">Group chat application with Spring Boot STOMP WebSocket backend and React/Vite frontend. Resolved a Vite/SockJS global scope incompatibility via globalThis shimming in the Vite config.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Java</span><span class="proj-tag">Spring Boot</span>
+          <span class="proj-tag">STOMP</span><span class="proj-tag">React</span>
+          <span class="proj-tag">Vite</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">Microservices Conversion</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">Decomposed a Maven monorepo into four standalone Spring Boot microservices with RabbitMQ async messaging. Spring Cloud Gateway handles JWT validation and header forwarding with a full Docker Compose deployment.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Spring Boot</span><span class="proj-tag">RabbitMQ</span>
+          <span class="proj-tag">Spring Cloud</span><span class="proj-tag">Docker</span>
+          <span class="proj-tag">JWT</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">ChatApp-V2 — Kafka</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">Three-service event-driven chat system built on Kafka, STOMP WebSockets, and JWT authentication. Includes a full GitHub Actions CI pipeline with corrected Maven wrapper, H2 test config, and Kafka test exclusions.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Java</span><span class="proj-tag">Kafka</span>
+          <span class="proj-tag">STOMP</span><span class="proj-tag">JWT</span>
+          <span class="proj-tag">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">Secure Task API</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">Production-grade REST API in Go with Gin, GORM, PostgreSQL, and JWT authentication. Clean layered architecture separating handlers, services, and repositories.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Go</span><span class="proj-tag">Gin</span>
+          <span class="proj-tag">GORM</span><span class="proj-tag">PostgreSQL</span>
+          <span class="proj-tag">JWT</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">ResultPortal</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">Django REST Framework student result portal with role-based access for admins, lecturers, and students. Manages departments, academic records, and result processing with PostgreSQL.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">Django</span>
+          <span class="proj-tag">DRF</span><span class="proj-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-line"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <div class="section-header reveal">
+          <p class="section-label">Background</p>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-text">
+          <p class="reveal">I'm <strong>Ejeh Kaodilichi Emmanuel</strong>, a full-stack and backend engineer based in Lagos, Nigeria, currently in the software engineering programme at <strong>Semicolon Africa</strong>.</p>
+          <p class="reveal">My focus is <strong>distributed systems and microservices architecture</strong>. I've built real-time event-driven systems with Kafka and WebSockets, decomposed monorepos into independently deployable services, implemented API gateways with JWT validation, and shipped CI/CD pipelines from scratch.</p>
+          <p class="reveal">I'm actively looking for backend and full-stack roles where I can work on infrastructure that handles real scale. Open to remote and international positions.</p>
+          <br/>
+          <a href="mailto:kaodilichiejeh02@gmail.com" class="btn-solid reveal" style="display:inline-flex;">Send me an email</a>
+        </div>
+      </div>
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat-n">6+</div>
+          <div class="stat-l">Production-grade projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">5</div>
+          <div class="stat-l">Languages in active use</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">3</div>
+          <div class="stat-l">Messaging systems shipped</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">1</div>
+          <div class="stat-l">Mission: build at scale</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-line"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div>
+        <div class="section-header reveal">
+          <p class="section-label">Contact</p>
+          <h2>Get In Touch</h2>
+        </div>
+        <p class="reveal" style="color:var(--muted);line-height:1.8;font-size:0.95rem;font-weight:300;margin-bottom:2rem;">Open to backend and full-stack roles, internships, and interesting engineering problems. I respond within 24 hours.</p>
+        <div class="contact-links">
+          <a href="mailto:kaodilichiejeh02@gmail.com" class="contact-link reveal">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            kaodilichiejeh02@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/kaodilichi-ejeh-66064238a" target="_blank" rel="noopener" class="contact-link reveal">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin.com/in/kaodilichi-ejeh
+          </a>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="contact-link reveal">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            github.com/odiliemmanuel
+          </a>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" />
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Tell me about the role or project..."></textarea>
+        </div>
+        <button class="btn-solid" onclick="handleSend(this)" style="align-self:flex-start;">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="f-left">&copy; 2026 Ejeh Kaodilichi Emmanuel</span>
+    <div class="f-right">
+      <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="f-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/kaodilichi-ejeh-66064238a" target="_blank" rel="noopener" class="f-link">LinkedIn</a>
+      <a href="mailto:kaodilichiejeh02@gmail.com" class="f-link">Email</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    function handleSend(btn) {
+      const form = btn.closest('.contact-form');
+      const name  = form.querySelector('input[type=text]').value.trim();
+      const email = form.querySelector('input[type=email]').value.trim();
+      const msg   = form.querySelector('textarea').value.trim();
+      if (!name || !email || !msg) { alert('Please fill in all fields.'); return; }
+      window.location.href = `mailto:kaodilichiejeh02@gmail.com?subject=Portfolio contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg)}%0A%0AFrom: ${encodeURIComponent(email)}`;
+    }
+  </script>
+</body>
+</html>
