@@ -153,12 +153,13 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
-      <p class="hero-tag">Software Engineer &mdash; Lagos, Nigeria</p>
+      <p class="hero-tag">Backend &amp; AI Engineer &mdash; Lagos, Nigeria</p>
       <h1>Building reliable<br/>systems <span>at scale.</span></h1>
       <p class="hero-sub">
         Hi, I'm <strong>Odili Emmanuel</strong> &mdash; a full-stack and backend engineer
         specialising in microservices, event-driven architecture, and distributed systems.
-        Currently training at <strong>Semicolon Africa</strong>.
+        Completed a <strong>Back-End AI Engineering internship at FlyRank</strong>, working on LLM
+        pipelines and RAG, alongside training at <strong>Semicolon Africa</strong>.
       </p>
       <div class="hero-btns">
         <a href="#projects" class="btn-solid">
@@ -197,10 +198,11 @@
         </div>
       </div>
       <div class="sk-card reveal">
-        <p class="sk-name">Databases</p>
+        <p class="sk-name">Databases &amp; Caching</p>
         <div class="tags">
           <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
-          <span class="tag">MongoDB</span><span class="tag">GORM</span>
+          <span class="tag">MongoDB</span><span class="tag">Redis</span>
+          <span class="tag">Flyway</span><span class="tag">GORM</span>
         </div>
       </div>
       <div class="sk-card reveal">
@@ -211,11 +213,18 @@
         </div>
       </div>
       <div class="sk-card reveal">
+        <p class="sk-name">AI &amp; LLM</p>
+        <div class="tags">
+          <span class="tag">LLM Pipelines</span><span class="tag">RAG</span>
+          <span class="tag">Multi-Agent Systems</span><span class="tag">Google Gemini API</span>
+        </div>
+      </div>
+      <div class="sk-card reveal">
         <p class="sk-name">DevOps &amp; Tooling</p>
         <div class="tags">
           <span class="tag">Docker</span><span class="tag">Docker Compose</span>
           <span class="tag">GitHub Actions</span><span class="tag">Linux</span>
-          <span class="tag">Maven</span><span class="tag">Postman</span>
+          <span class="tag">Maven</span><span class="tag">Postman</span><span class="tag">Render</span>
         </div>
       </div>
       <div class="sk-card reveal">
@@ -223,7 +232,7 @@
         <div class="tags">
           <span class="tag">Microservices</span><span class="tag">Event-Driven</span>
           <span class="tag">API Gateway</span><span class="tag">JWT Auth</span>
-          <span class="tag">Spring Cloud</span>
+          <span class="tag">Spring Cloud Gateway</span><span class="tag">Eureka</span>
         </div>
       </div>
     </div>
@@ -241,16 +250,74 @@
 
       <div class="proj-card reveal">
         <div class="proj-top">
-          <h3 class="proj-name">EduPath Nigeria</h3>
+          <h3 class="proj-name">SplitPay <span style="font-size:0.7rem;color:var(--accent);font-weight:400;">— In Progress</span></h3>
           <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           </a>
         </div>
-        <p class="proj-desc">AI-powered personalised learning platform for Nigerian students. Full-stack capstone at Semicolon Africa &mdash; Go (Gin) REST backend, React/TypeScript frontend. Designed using the full Design Thinking process from user research to prototype.</p>
+        <p class="proj-desc">Shared-expense and group-settlement platform for simplifying how roommates, teams, and event groups split costs and settle up. Currently in early development.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Java</span><span class="proj-tag">Spring Boot</span>
+          <span class="proj-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">FeeBridge</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">School fee management platform integrating Nomba MFB for virtual account provisioning and webhook-based payment reconciliation. Async, in-process event bus drives a transport-agnostic notification system with its own audit log and in-app feed.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Java</span><span class="proj-tag">Spring Boot</span>
+          <span class="proj-tag">Redis</span><span class="proj-tag">Flyway</span>
+          <span class="proj-tag">React</span><span class="proj-tag">Nomba API</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">PropTrack</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">6-service property management platform with database-per-service PostgreSQL, Kafka event streaming, and Spring Cloud Gateway/Eureka discovery. Google Geocoding API validates addresses; a Kafka-consumer analytics service keeps an append-only event store.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Java 21</span><span class="proj-tag">Kafka</span>
+          <span class="proj-tag">Spring Cloud Gateway</span><span class="proj-tag">Eureka</span>
+          <span class="proj-tag">Redis</span><span class="proj-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">EstateLink</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">Real-estate microservices platform with a user-service and notification-service communicating over Kafka. Worked through dependency-injection bugs, container-naming conflicts, and hostname resolution differences between local and Dockerized runs.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Java</span><span class="proj-tag">Spring Boot</span>
+          <span class="proj-tag">Kafka</span><span class="proj-tag">PostgreSQL</span>
+          <span class="proj-tag">Docker Compose</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-top">
+          <h3 class="proj-name">LearnQuest AI</h3>
+          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <p class="proj-desc">AI-powered quiz platform for Nigerian JSS1&ndash;SS3 students. Go (Gin) backend integrates Google Gemini for live question generation and automated theory-answer grading, paired with a React frontend.</p>
         <div class="proj-tags">
           <span class="proj-tag">Go</span><span class="proj-tag">Gin</span>
-          <span class="proj-tag">React</span><span class="proj-tag">TypeScript</span>
-          <span class="proj-tag">PostgreSQL</span>
+          <span class="proj-tag">Google Gemini API</span><span class="proj-tag">React</span>
         </div>
       </div>
 
@@ -299,35 +366,6 @@
         </div>
       </div>
 
-      <div class="proj-card reveal">
-        <div class="proj-top">
-          <h3 class="proj-name">Secure Task API</h3>
-          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <p class="proj-desc">Production-grade REST API in Go with Gin, GORM, PostgreSQL, and JWT authentication. Clean layered architecture separating handlers, services, and repositories.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Go</span><span class="proj-tag">Gin</span>
-          <span class="proj-tag">GORM</span><span class="proj-tag">PostgreSQL</span>
-          <span class="proj-tag">JWT</span>
-        </div>
-      </div>
-
-      <div class="proj-card reveal">
-        <div class="proj-top">
-          <h3 class="proj-name">ResultPortal</h3>
-          <a href="https://github.com/odiliemmanuel" target="_blank" rel="noopener" class="proj-gh" title="GitHub">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
-        </div>
-        <p class="proj-desc">Django REST Framework student result portal with role-based access for admins, lecturers, and students. Manages departments, academic records, and result processing with PostgreSQL.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span><span class="proj-tag">Django</span>
-          <span class="proj-tag">DRF</span><span class="proj-tag">PostgreSQL</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -342,8 +380,8 @@
           <h2>About Me</h2>
         </div>
         <div class="about-text">
-          <p class="reveal">I'm <strong>Ejeh Kaodilichi Emmanuel</strong>, a full-stack and backend engineer based in Lagos, Nigeria, currently in the software engineering programme at <strong>Semicolon Africa</strong>.</p>
-          <p class="reveal">My focus is <strong>distributed systems and microservices architecture</strong>. I've built real-time event-driven systems with Kafka and WebSockets, decomposed monorepos into independently deployable services, implemented API gateways with JWT validation, and shipped CI/CD pipelines from scratch.</p>
+          <p class="reveal">I'm <strong>Ejeh Kaodilichi Emmanuel</strong>, a full-stack and backend engineer based in Lagos, Nigeria, currently in the software engineering programme at <strong>Semicolon Africa</strong>, having recently completed a Back-End AI Engineering internship at <strong>FlyRank</strong>.</p>
+          <p class="reveal">My focus is <strong>distributed systems, microservices architecture, and AI-powered backends</strong>. I've built real-time event-driven systems with Kafka and WebSockets, decomposed monorepos into independently deployable services, implemented API gateways with JWT validation, integrated payment and LLM APIs, and shipped CI/CD pipelines from scratch.</p>
           <p class="reveal">I'm actively looking for backend and full-stack roles where I can work on infrastructure that handles real scale. Open to remote and international positions.</p>
           <br/>
           <a href="mailto:kaodilichiejeh02@gmail.com" class="btn-solid reveal" style="display:inline-flex;">Send me an email</a>
@@ -351,7 +389,7 @@
       </div>
       <div class="stats reveal">
         <div class="stat">
-          <div class="stat-n">6+</div>
+          <div class="stat-n">8+</div>
           <div class="stat-l">Production-grade projects</div>
         </div>
         <div class="stat">
@@ -364,7 +402,7 @@
         </div>
         <div class="stat">
           <div class="stat-n">1</div>
-          <div class="stat-l">Mission: build at scale</div>
+          <div class="stat-l">AI backend internship completed (FlyRank)</div>
         </div>
       </div>
     </div>
